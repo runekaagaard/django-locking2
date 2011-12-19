@@ -106,11 +106,17 @@ class Lock(models.Model):
 		user; that way, we can throw an exception when another user tries to unlock
 		an object they haven't locked themselves.
 		
-		When using soft locks (the default), any process can still use the save method
+		When using soft locks, any process can still use the save method
 		on this object. If you set ``hard_lock=True``, trying to save an object
 		without first unlocking will raise an ``ObjectLockedError``.
 		
 		Don't use hard locks unless you really need them. See :doc:`design`.
+		
+		The 'hard lock' flag is set to True as the default as a fail safe method to 
+		back up javascript lock validations.  This is useful when the user's lock expires
+		or javascript fails to load, etc.
+		Keep in mind that soft locks are set since they provide the user with a user friendly 
+		locking interface.
 		"""
 		logger.debug("Attempting to initiate a lock for user `%s`" % user)
 
