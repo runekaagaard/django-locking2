@@ -14,8 +14,9 @@ Documentation
 -------------
 Forked from the Django Locking plugin at stdbrouw/django-locking, this code features the cream of the crop for django-locking combining features from over 4 repos!
 
-New features added to this fork:
-  Changes on change list pages:
+New features added to this fork
+===============================
+  Changes on change list pages
     Unlock content object from change list page by simply clicking on the lock icon
 
 .. image:: docs/screenshots/unlock_prompt.png
@@ -60,25 +61,25 @@ New features added to this fork:
 10 Minute Install
 -----------------
 
-1) Get the code -> 
+1) Get the code
 
 ::
 
    git clone git@github.com:RobCombs/django-locking.git
 
-2) Add locking to list of INSTALLED_APPS in project settings file -> 
+2) Add locking to list of INSTALLED_APPS in project settings file
 
 ::
 
    INSTALLED_APPS = ('locking',)
 
-3) Copy the media (with all of the js/css/img stuff) directory to your admin media directory -> 
+3) Copy the media (with all of the js/css/img stuff) directory to your admin media directory
 
 ::
 
    cp -r locking/media/locking $your admin media directory
 
-Note: You can quickly test the media installation by hitting a locking media resource locally like so -> ::
+Note: You can quickly test the media installation by hitting a locking media resource locally like so
 http://www.local.wsbradio.com:8000/media/locking/js/admin.locking.js
 If the url resolves, then you've completed this step correctly!  
 Basically, the code refers to the media like so.  That's why you needed to do this step.
@@ -91,21 +92,21 @@ class Media:
    css = {"all": ("locking/css/locking.css",)
    }
 
-4) Add locking to the admin files that you want locking for ->
+4) Add locking to the admin files that you want locking for
 
 ::
 
    from locking.admin import LockableAdmin
    class YourAdmin(LockableAdmin):
        list_display = ('get_lock_for_admin')
-5) Add warning and expiration time outs to your Django settings file ->
+5) Add warning and expiration time outs to your Django settings file
 
 ::
 
    LOCKING = {'time_until_expiration': 120, 'time_until_warning': 60}
 
 
-6) Build the Lock table in the database -> 
+6) Build the Lock table in the database
 
 ::
 
@@ -116,13 +117,13 @@ That's it!
 
 Optional
 --------
-If you'd like to enforce hard locking(recommended), then add the LockingForm class to the same admin pages ->
+If you'd like to enforce hard locking(recommended), then add the LockingForm class to the same admin pages
 Example:
 from locking.forms import LockingForm
 class YourAdmin(LockableAdmin):
      list_display = ('get_lock_for_admin')
      form = LockingForm
-Note: if you have an existing form and clean method, then call super to invoke the LockingForm's clean method ->
+Note: if you have an existing form and clean method, then call super to invoke the LockingForm's clean method
 Example:
 from locking.forms import LockingForm
 class YourFormForm(LockingForm):
