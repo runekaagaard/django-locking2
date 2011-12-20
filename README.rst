@@ -17,17 +17,25 @@ Forked from the Django Locking plugin at stdbrouw/django-locking, this code feat
 New features added to this fork:
   Changes on change list pages:
     Unlock content object from change list page by simply clicking on the lock icon
-    .. image:: docs/screenshots/unlock_prompt.png
+
+.. image:: docs/screenshots/unlock_prompt.png
+
 	  Hover over the lock icon to see when the lock expires
-    .. image:: docs/screenshots/expire_status.png
+	
+.. image:: docs/screenshots/expire_status.png
+
 	  Hover over the username by the lock icon to see the full name of the person who has locked the content object 
-    .. image:: docs/screenshots/lock_by_who.png
+	
+.. image:: docs/screenshots/lock_by_who.png
+
 	  Consolidated username and lock icon into one column on change list page
 	Changes in settings:
 	  Added Lock warning and expiration flags in terms of seconds
 	Lock messages:
     Added options to reload or save the object when lock expiration message is shown
-    .. image:: docs/screenshots/reload_or_bust.png
+
+.. image:: docs/screenshots/reload_or_bust.png
+
 	  Improved look and feel for the lock messages
 	  Lock messages fade in and out seamlessly
 	  Added much more detail to let users know who the content object was locked by providing the username, first name and last name
@@ -35,17 +43,23 @@ New features added to this fork:
     Shows how much longer the object is locked for in minutes 
   Locking:
     Added hard locking support using Django's validation framework
-    .. image:: docs/screenshots/hard_lock.png
+
+.. image:: docs/screenshots/hard_lock.png
+
     Set hard and soft locking as the default to ensure the integrity of locking
     Added seamless unlocking when lock expires
-    .. image:: docs/screenshots/auto_expire.png
+
+.. image:: docs/screenshots/auto_expire.png
+
 	Architecture:
 	  1 model tracks lock information and that's it!  No messy migrations for each model that needs locking.
 	  Refactored and cleaned up code for easier maintainability
     Simplified installation by coupling common functionality into base admin/form/model classes
 
 
-10 Minute Install:
+10 Minute Install
+-----------------
+
 1) Get the code -> 
 
 ::
