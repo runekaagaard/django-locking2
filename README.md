@@ -80,44 +80,44 @@ Refactored and cleaned up code for easier maintainability
 
 1) Get the code:
 
-   git clone git@github.com:RobCombs/django-locking.git
+    git clone git@github.com:RobCombs/django-locking.git
 
 2) Add locking to list of INSTALLED_APPS in project settings file:
 
-   INSTALLED_APPS = ('locking',)
+    INSTALLED_APPS = ('locking',)
 
 3) Copy the media (with all of the js/css/img stuff) directory to your admin media directory:
 
-   cp -r locking/media/locking $your admin media directory
+    cp -r locking/media/locking $your admin media directory
 
 Note: You can quickly test the media installation by hitting a locking media resource locally like so
 http://www.local.wsbradio.com:8000/media/locking/js/admin.locking.js
 If the url resolves, then you've completed this step correctly!  
 Basically, the code refers to the media like so.  That's why you needed to do this step.
 class Media:
-   js = ( 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', 
+    js = ( 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', 
          'locking/js/jquery.url.packed.js',
          "/admin/ajax/variables.js",
          "locking/js/admin.locking.js?v=1")
 
-   css = {"all": ("locking/css/locking.css",)
-   }
+    css = {"all": ("locking/css/locking.css",)
+    }
 
 4) Add locking to the admin files that you want locking for:
 
-   from locking.admin import LockableAdmin
-   class YourAdmin(LockableAdmin):
+    from locking.admin import LockableAdmin
+    class YourAdmin(LockableAdmin):
        list_display = ('get_lock_for_admin')
 
 5) Add warning and expiration time outs to your Django settings file:
 
-   LOCKING = {'time_until_expiration': 120, 'time_until_warning': 60}
+    LOCKING = {'time_until_expiration': 120, 'time_until_warning': 60}
 
 
 6) Build the Lock table in the database:
 
-  django-admin.py/manage.py migrate locking (For south users. Recommended approach) OR
-  django-admin.py/manage.py syncdb (For non south users)
+    django-admin.py/manage.py migrate locking (For south users. Recommended approach) OR
+    django-admin.py/manage.py syncdb (For non south users)
 
 That's it!
 
