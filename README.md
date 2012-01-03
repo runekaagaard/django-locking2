@@ -22,7 +22,7 @@ Changes on change list pages
 Unlock content object from change list page by simply clicking on the lock icon
 _______________________________________________________________________________
 
-![unlock prompt](https://github.com/RobCombs/django-locking/blob/master/docs/screenshots/unlock_prompt.png)
+![unlock prompt](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/unlock_prompt.png)
 
 .. image:: docs/screenshots/unlock_prompt.png
 
