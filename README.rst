@@ -13,3 +13,14 @@ django-locking has only been tested on Django 1.2 and 1.3, but probably works fr
 Documentation
 -------------
 Forked from the Django Locking plugin at stdbrouw/django-locking, this code features the cream of the crop for django-locking combining features from over 4 repos!
+
+New features added to this fork
+===============================
+Changes on change list pages
+----------------------------
+
+Unlock content object from change list page by simply clicking on the lock icon
+_______________________________________________________________________________
+
+.. image:: https://skitch.com/robertlcombs/g1177/screen-shot-2011-12-19-at-4.36.55-pm
+
