@@ -21,6 +21,6 @@ Changes on change list pages
 ============================
 
 Unlock content object from change list page by simply clicking on the lock icon
-_______________________________________________________________________________
+
 
 
