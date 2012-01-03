@@ -23,7 +23,4 @@ Changes on change list pages
 Unlock content object from change list page by simply clicking on the lock icon
 _______________________________________________________________________________
 
-.. image:: https://skitch.com/robertlcombs/g1177/screen-shot-2011-12-19-at-4.36.55-pm
-
-Hover over the lock icon to see when the lock expires
 
