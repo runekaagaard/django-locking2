@@ -22,6 +22,6 @@ Changes on change list pages
 
 Unlock content object from change list page by simply clicking on the lock icon
 
-![css dark](https://github.com/tripleonard/kod-solarized/raw/master/img/kod-css-dark.png)
+.. |biohazard| image:: https://github.com/tripleonard/kod-solarized/raw/master/img/kod-css-dark.png
 
 
