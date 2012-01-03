@@ -24,17 +24,16 @@ _______________________________________________________________________________
 
 ![unlock prompt](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/unlock_prompt.png)
 
-.. image:: docs/screenshots/unlock_prompt.png
-
 Hover over the lock icon to see when the lock expires
 _____________________________________________________
 
-.. image:: docs/screenshots/expire_status.png
+![expire status](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/expire_status.png)
 
 Hover over the username by the lock icon to see the full name of the person who has locked the content object 
 _____________________________________________________________________________________________________________
 
-.. image:: docs/screenshots/lock_by_who.png
+![lock_by_who](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/lock_by_who.png)
+
 
 Consolidated username and lock icon into one column on change list page
 Changes in settings:
@@ -47,7 +46,7 @@ Lock messages:
 
 Added options to reload or save the object when lock expiration message is shown
 
-.. image:: docs/screenshots/reload_or_bust.png
+![reload or bust](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/reload_or_bust.png)
 
 Improved look and feel for the lock messages
 Lock messages fade in and out seamlessly
@@ -60,12 +59,13 @@ Locking:
 
  Added hard locking support using Django's validation framework
 
-.. image:: docs/screenshots/hard_lock.png
+![hard lock](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/hard_lock.png)
 
  Set hard and soft locking as the default to ensure the integrity of locking
  Added seamless unlocking when lock expires
 
-.. image:: docs/screenshots/auto_expire.png
+![auto expire](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/auto_expire.png)
+
 
 Architecture:
 ----------------------------
