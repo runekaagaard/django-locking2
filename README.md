@@ -22,6 +22,8 @@ Changes on change list pages
 Unlock content object from change list page by simply clicking on the lock icon
 _______________________________________________________________________________
 
+![unlock prompt](https://github.com/tripleonard/kod-solarized/raw/master/img/kod-css-dark.png)
+
 .. image:: docs/screenshots/unlock_prompt.png
 
 Hover over the lock icon to see when the lock expires
