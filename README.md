@@ -124,15 +124,20 @@ That's it!
 Optional
 --------
 If you'd like to enforce hard locking(recommended), then add the LockingForm class to the same admin pages
+
 Example:
-from locking.forms import LockingForm
-class YourAdmin(LockableAdmin):
+
+    from locking.forms import LockingForm
+    class YourAdmin(LockableAdmin):
      list_display = ('get_lock_for_admin')
      form = LockingForm
+     
 Note: if you have an existing form and clean method, then call super to invoke the LockingForm's clean method
+
 Example:
-from locking.forms import LockingForm
-class YourFormForm(LockingForm):
+
+    from locking.forms import LockingForm
+    class YourFormForm(LockingForm):
       def clean(self):
         self.cleaned_data = super(MedleyRedirectForm, self).clean()
         ...some code
