@@ -15,11 +15,6 @@ Documentation
 Forked from the Django Locking plugin at stdbrouw/django-locking, this code features the cream of the crop for django-locking combining features from over 4 repos!
 
 New features added to this fork
-===============================
-Changes on change list pages
-----------------------------
 
-Unlock content object from change list page by simply clicking on the lock icon
-_______________________________________________________________________________
 
 
