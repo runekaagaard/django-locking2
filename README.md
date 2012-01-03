@@ -78,21 +78,15 @@ Refactored and cleaned up code for easier maintainability
 10 Minute Install
 -----------------
 
-1) Get the code
-
-::
+1) Get the code:
 
    git clone git@github.com:RobCombs/django-locking.git
 
-2) Add locking to list of INSTALLED_APPS in project settings file
-
-::
+2) Add locking to list of INSTALLED_APPS in project settings file:
 
    INSTALLED_APPS = ('locking',)
 
-3) Copy the media (with all of the js/css/img stuff) directory to your admin media directory
-
-::
+3) Copy the media (with all of the js/css/img stuff) directory to your admin media directory:
 
    cp -r locking/media/locking $your admin media directory
 
@@ -109,23 +103,18 @@ class Media:
    css = {"all": ("locking/css/locking.css",)
    }
 
-4) Add locking to the admin files that you want locking for
-
-::
+4) Add locking to the admin files that you want locking for:
 
    from locking.admin import LockableAdmin
    class YourAdmin(LockableAdmin):
        list_display = ('get_lock_for_admin')
-5) Add warning and expiration time outs to your Django settings file
 
-::
+5) Add warning and expiration time outs to your Django settings file:
 
    LOCKING = {'time_until_expiration': 120, 'time_until_warning': 60}
 
 
-6) Build the Lock table in the database
-
-::
+6) Build the Lock table in the database:
 
   django-admin.py/manage.py migrate locking (For south users. Recommended approach) OR
   django-admin.py/manage.py syncdb (For non south users)
