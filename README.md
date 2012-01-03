@@ -64,7 +64,7 @@ Locking:
  Set hard and soft locking as the default to ensure the integrity of locking
  Added seamless unlocking when lock expires
 
-![auto expire](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/auto_expire.png)
+![auto unlock](https://github.com/RobCombs/django-locking/raw/master/docs/screenshots/auto_unlock.png)
 
 
 Architecture:
