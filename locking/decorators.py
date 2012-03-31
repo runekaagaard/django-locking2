@@ -3,7 +3,7 @@
 from django.http import HttpResponse
 from django.contrib.contenttypes.models import ContentType
 
-from locking.models import LockableModel
+from locking.models import Lock
 from locking import logger
 
 def user_may_change_model(fn):
@@ -18,19 +18,7 @@ def user_may_change_model(fn):
 
 def is_lockable(fn):
     def view(request, app, model, *vargs, **kwargs):
-        try:
-            cls = ContentType.objects.get(app_label=app, model=model).model_class()
-            if issubclass(cls, LockableModel):
-                lockable = True
-            else:
-                lockable = False
-        except ContentType.DoesNotExist:
-            lockable = False
-            
-        if lockable:
-            return fn(request, app, model, *vargs, **kwargs)
-        else:
-            return HttpResponse(status=404)
+    	return fn(request, app, model, *vargs, **kwargs)
     return view
 
 def log(view):
