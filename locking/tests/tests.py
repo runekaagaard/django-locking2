@@ -71,7 +71,39 @@ class AppTestCase(TestCase):
         self.assertTrue(self.story.is_locked)
         self.story._locked_at = datetime.today() - timedelta(minutes=LOCK_TIMEOUT+1)
         self.assertFalse(self.story.is_locked)
-    
+
+    def test_lock_expiration_day(self):
+        self.story.lock_for(self.user)
+        self.assertTrue(self.story.is_locked)
+        self.story._locked_at = datetime.today() - timedelta(days=1, seconds=1)
+        self.assertFalse(self.story.is_locked)
+
+    def test_lock_seconds_remaining(self):
+        self.story.lock_for(self.user)
+        expected = LOCK_TIMEOUT
+        self.assertTrue(self.story.lock_seconds_remaining <= expected + 1 and
+                        self.story.lock_seconds_remaining >= expected - 1,
+                        "%d not close to %d" % (
+                            self.story.lock_seconds_remaining, expected))
+
+    def test_lock_seconds_remaining_half_timeout(self):
+        self.story.lock_for(self.user)
+        self.story._locked_at -= timedelta(seconds=(LOCK_TIMEOUT / 2))
+        expected = LOCK_TIMEOUT / 2
+        self.assertTrue(self.story.lock_seconds_remaining <= expected + 1 and
+                        self.story.lock_seconds_remaining >= expected - 1,
+                        "%d not close to %d" % (
+                            self.story.lock_seconds_remaining, expected))
+
+    def test_lock_seconds_remaining_day(self):
+        self.story.lock_for(self.user)
+        self.story._locked_at -= timedelta(days=1)
+        expected = LOCK_TIMEOUT - (24 * 60 * 60)
+        self.assertTrue(self.story.lock_seconds_remaining <= expected + 1 and
+                        self.story.lock_seconds_remaining >= expected - 1,
+                        "%d not close to %d" % (
+                            self.story.lock_seconds_remaining, expected))
+
     def test_lock_applies_to(self):
         self.story.lock_for(self.alt_user)
         applies = self.story.lock_applies_to(self.user)
